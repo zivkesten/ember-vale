@@ -1,26 +1,33 @@
 # Ember Vale
 
-An original, one-level browser beat-'em-up inspired by the broad conventions of 1990s side-scrolling arcade games. It does not include any SEGA assets, character names, recordings, music, or code from the unlicensed lrusso/GoldenAxe repository.
+An original pixel-art arcade brawler for the browser, built in the spirit of late-1980s side-scrolling fantasy beat-'em-ups. All artwork is hand-drawn in code: no SEGA assets, sprites, names, audio, or code, and nothing from the unlicensed lrusso/GoldenAxe repository.
 
 ## Play
 
-Open `index.html` in a browser or on GitHub Pages. On mobile, use the on-screen directional pad and Strike, Jump, Magic buttons. In a desktop browser, use arrows/WASD, J, K, L, P.
+Live at https://zivkesten.github.io/ember-vale/ (single `index.html`, served from `main` root via GitHub Pages).
 
-Four waves, three lives, score, food and potion pickups, chained attacks, knockback, depth-lane enemy AI, jump arcs, and area magic. Before play, choose one of three original archetypes: barbarian, dwarf, or amazon. These are visual choices with the same game balance. Skeletons, raiders, and iron-clad wardens arrive in different mixes by wave. The scenery uses original canvas-drawn pixel geometry, sunset mountains, trees, stone columns, road stones, and a beacon gate. Portrait shows the game and controls stacked; landscape overlays controls on the full-height game. No network access, sign-in, analytics, or audio. This is not a one-to-one reconstruction of Golden Axe.
+- **Touch**: directional pad, Strike, Jump, Magic. Double-tap left/right to dash.
+- **Keyboard**: arrows/WASD to move, J strike, K jump, L magic, P pause. Double-tap a direction to dash.
+
+## The game
+
+Pick one of three heroes - barbarian, dwarf, or amazon - and fight through four side-scrolling stages: the Old Road, the Ruined Village, the Giant Bridge, and the Castle Gate, ending with the boss Warlord Brann.
+
+- Three-hit combos, dash attacks, jump attacks, and throws; enemies can be knocked down and juggled.
+- Depth movement: walk up and down the lane, not just left/right.
+- Club thugs in several colors, skeletons that rise out of the ground, and armored knights that block frontal hits.
+- Rideable beasts: knock the rider off a cockatrice or dragon and mount it; the dragon breathes fire.
+- Small thieves dart in and drop magic pots and meat when smacked.
+- Leveled magic: pots you collect set the spell level. Barbarian calls fire pillars, dwarf calls lightning, amazon calls a dragon flyby. More pots, bigger spell.
+- Arcade HUD: stage number, magic pots + spell level, score, hero portrait with ten life segments, spare-life heads, CREDIT 1, and a red boss bar.
+- Title, hero select, stage intro cards, game over, and victory screens. Chiptune-style WebAudio effects.
 
 ## Source note
 
-The reference at https://github.com/lrusso/GoldenAxe is a Phaser-based JavaScript demo. It bundles images, sounds, and music with an educational-use disclaimer and publishes no explicit license. None of its files are included here.
+The reference at https://github.com/lrusso/GoldenAxe is a Phaser demo that bundles images, sounds, and music with an educational-use disclaimer and no explicit license. None of its files, and no SEGA material, are included here. Every sprite in Ember Vale is an original part-drawn pixel composition rendered at 320x180 and scaled 3x.
 
 ## Decisions / handoff
 
-- 2026-09-27: Use original canvas geometry and original name due to missing license and SEGA-owned media in the reference.
-- 2026-09-27: Static single-file deployment to GitHub Pages for phone access. No backend or data is necessary.
-- Verify on a physical Pixel for ergonomics before describing it as device-tested; desktop mobile emulation is a separate check.
-
-## PRD / handoff update, 2026-09-27
-
-- Direction: a warmer 1980s fantasy arcade cabinet feel without tracing or importing any Golden Axe sprite, name, logo, sound, or code. Hand-drawn hard-edged canvas geometry keeps the work original.
-- Presentation: three selectable hero silhouettes, angular weapon swings and broad slash arcs, bone and armored enemy silhouettes, more particles on hits, visible potion bottles, richer layered ruins and road. Existing keyboard and touch bindings stay unchanged.
-- Design scope: hero choice is cosmetic, combat math remains shared; avoids implying separately tuned classes. The stage stays four waves and ends at the beacon.
-- Test checklist: desktop launch, movement, chained strikes, jump, magic, pickup, pause/resume; 390 px portrait and landscape with buttons visible and responsive. Physical Android device has not been tested.
+- 2026-09-27 (round 2): Full rebuild as a pixel-art arcade brawler after the blocky-vector first pass missed the target feel. Hand-drawn parts per character with paper-doll frames (walk, attack, dash, cast, hurt, sit, knockdown). Verified live at 390x844 portrait and 844x390 landscape against original arcade reference screenshots (reference only, never copied).
+- 2026-09-27 (round 1): Original canvas geometry and original name because the reference lacks a license and contains SEGA-owned media. Static single-file deployment for phone access.
+- Verify on a physical phone before describing the game as device-tested; desktop emulation is a separate check.
